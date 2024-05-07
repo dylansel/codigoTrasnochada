@@ -1,11 +1,14 @@
 
+var video = document.getElementById("video");
+video.oncanplay = function() {
+    video.play();
+};
 
-
-    var video = document.getElementById("video");
-    video.oncanplay = function() {
+document.addEventListener("click", function() {
+    if(video.paused){
         video.play();
-    };
-
+    }
+});
 console.log("Document loaded and rendered successfully.");
 
 var inputCode = document.getElementById("inputCode");
