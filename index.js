@@ -1,8 +1,8 @@
 
 var video = document.getElementById("video");
-video.oncanplay = function() {
-    video.play();
-};
+// video.oncanplay = function() {
+//     video.play();
+// };
 
 document.addEventListener("click", function() {
     if(video.paused){
