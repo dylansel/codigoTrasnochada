@@ -1,11 +1,12 @@
 
 
-window.onload = function() {
+
     var video = document.getElementById("video");
     video.oncanplay = function() {
         video.play();
     };
-};
+
+console.log("Document loaded and rendered successfully.");
 
 var inputCode = document.getElementById("inputCode");
 var btnContinuar = document.getElementById("btnContinuar");
