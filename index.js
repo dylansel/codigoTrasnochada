@@ -5,7 +5,7 @@ const btnContinuar = document.getElementById("btnContinuar");
 const modal = document.getElementById("passwordModal");
 const modalPasswordInput = document.getElementById("modalPasswordInput");
 const submitPasswordBtn = document.getElementById("submitPasswordBtn");
-
+let bloqueado = false;
 let currentAudioIndex = null;
 
 // Arrays de contraseñas y audios
@@ -41,12 +41,32 @@ submitPasswordBtn.addEventListener("click", () => {
     }
 });
 
-// Cerrar modal con Esc
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        modal.style.display = "none";
+
+// Bloquear F12, Ctrl+Shift+I, Ctrl+U y clic derecho
+document.addEventListener("keydown", function (e) {
+    
+    
+    // 
+    if (
+        e.key === "F12" || e.key === "F11" ||
+        (e.ctrlKey && e.shiftKey && e.key === "I") ||
+        (e.ctrlKey && e.key === "u") ||
+        e.key === "Escape"
+    ) {
+        console.log("Acción Recibida: " + e.key);
+        if(bloqueado) {
+            console.log("Acción bloqueada");
+            e.preventDefault();
+            return false;
+        }
     }
 });
+
+// Bloquear clic derecho
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
 
 // Video click play
 document.addEventListener("click", () => {
@@ -61,6 +81,7 @@ inputCode.addEventListener("input", () => {
 // Validar clave principal
 function validateInput() {
     if (inputCode.value.toUpperCase() === "LATIMED") {
+         bloqueado = false;
         const successBlock = document.getElementById("successBlock");
         const successBlock1 = document.getElementById("successBlock1");
         successBlock1.style.opacity = "1";
@@ -74,6 +95,7 @@ function validateInput() {
             successBlock.style.display = "flex";
         }, 2000);
     } else {
+        bloqueado = true;
         const errorBlock = document.getElementById("errorBlock");
         errorBlock.style.opacity = "1";
         inputCode.style.border = "4px solid red";
