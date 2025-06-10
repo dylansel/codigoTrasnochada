@@ -8,29 +8,57 @@
 <body>
     <div class="contenedorGrande">
 
-    <div class="successBlock" id="successBlock">
-        <div>
-            <p class="aclaracionTexto">Codigo</p>
-            <h2 class="textSucces" id="contentSuccess">HAMAR</h2>
+        <div class="successBlock" id="successBlock">
+            <div>
+                <p class="aclaracionTexto">CORRECTO</p>
+                <h2 class="textSucces" id="contentSuccess">PUERTA DESBLOQUEADA</h2>
+            </div>
+        </div>
+        <div class="videocontent" id="videocontent">
+            <video loop id="video" preload="auto">
+                <source src="glitchbackground.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="contenedorCodigo">
+            <div class="contInput">
+                <input type="text" id="inputCode" placeholder="Ingresar clave" maxlength="7" class="code-input" autocomplete="off">
+                <button class="btnContinuar" id="btnContinuar"><i class="fa-solid fa-power-off"></i></button>
+            </div>
+            <div class="textocod errorBlock" id="errorBlock">
+                <h2>Clave incorrecta</h2>
+            </div>
+            <div class="textocod successBlock1" id="successBlock1">
+                <h2>Desencriptando...</h2>
+            </div>
+
+            <div class="audio-icons">
+                <div class="audio-icon-container" data-index="0">
+                    <img src="IconoAudio.png" alt="Audio 1">
+                    <div class="audio-icon-number">1</div>
+                </div>
+                <div class="audio-icon-container" data-index="1">
+                    <img src="IconoAudio.png" alt="Audio 2">
+                    <div class="audio-icon-number">2</div>
+                </div>
+                <div class="audio-icon-container" data-index="2">
+                    <img src="IconoAudio.png" alt="Audio 3">
+                    <div class="audio-icon-number">3</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="errorBlock" id="errorBlock">
-        <h2>Clave invalida</h2>
-    </div>
-    <div class="successBlock1" id="successBlock1">
-        <h2>Desencriptando...</h2>
-    </div>
-    <div class="videocontent" id="videocontent">
-        <video loop id="video" preload="auto">
-            <source src="glitchbackground.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="contInput">
-        <input type="text" id="inputCode" placeholder="Ingresar clave" maxlength="5" class="code-input" autocomplete="off">
-        <button class="btnContinuar" id="btnContinuar"><i class="fa-solid fa-power-off"></i></button>
-    </div>
-    </div>
-    <script src="index.js"></script>
 
+    <!-- Modal -->
+    <div id="passwordModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span> <!-- Botón de cerrar -->
+        <p>Ingresa la contraseña:</p>
+        <input type="text" id="modalPasswordInput">
+        <br>
+        <button id="submitPasswordBtn">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
