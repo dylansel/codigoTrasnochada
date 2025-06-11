@@ -13,7 +13,7 @@ let esPrimeraVez = true;
 let currentAudioIndex = null;
 
 // Arrays de contraseñas y audios
-const passwords = ["clave1", "clave2", "clave3"];
+const passwords = ["LETAVIVA", "LETINIMOTINI15", "M3L4N"];
 const audioFiles = ["Audio1.mp3", "Audio2.mp3", "Audio3.mp3"];
 
 // Mostrar modal al hacer click en íconos
